@@ -14,7 +14,7 @@ Add-Type -Path 'Octopus.Client.dll'
 
 # Octopus connection info, make API key in your profile
 $apikey = '' # Get this from your profile
-$octopusURI = 'https://octopus.acuityads.cloud/api/'
+$octopusURI = ''
 
 # Create endpoint and client
 $endpoint = New-Object Octopus.Client.OctopusServerEndpoint($octopusURI, $apikey)
@@ -22,7 +22,7 @@ $client = New-Object Octopus.Client.OctopusClient($endpoint)
 
 # Get default repository and get space by name
 $repository = $client.ForSystem()
-$space = $repository.Spaces.FindByName("illumin")
+$space = $repository.Spaces.FindByName("")
 
 # Get space specific repository and get all projects in space
 $repositoryForSpace = $client.ForSpace($space)
